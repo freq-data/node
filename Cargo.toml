@@ -1,0 +1,13 @@
+[package]
+name = "node-watcher"
+authors = ["Alexander Poole <alexander@poole.solutions>"]
+version = "0.1.0"
+edition = "2018"
+description = "A CLI for watching ETH nodes and pubsubing when events happen."
+readme = "README.md"
+repository = "https://github.com/freq-data/node-watcher"
+license = "GPL-3.0"
+keywords = ["eth", "node", "pubsub"]
+categories = ["command-line-utilities"]
+
+[dependencies]

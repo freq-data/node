@@ -1,0 +1,87 @@
+[tasks.clean]
+command = "cargo"
+args = ["clean"]
+
+[tasks.formatFix]
+description = "Runs the cargo rustfmt plugin."
+install_crate = "rustfmt"
+command = "cargo"
+args = ["fmt", "--all",  "--"]
+
+[tasks.format]
+description = "Runs the cargo rustfmt plugin."
+install_crate = "rustfmt"
+command = "cargo"
+args = ["fmt", "--all",  "--", "--check"]
+
+[tasks.lint]
+description = "Runs the cargo clippy plugin."
+install_crate = "clippy"
+command = "cargo"
+args = ["clippy", "--all-targets", "--all-features", "--",  "-D", "warnings"]
+
+[tasks.styleFix]
+dependencies = [
+    "formatFix"
+]
+
+[tasks.assemble]
+command = "cargo"
+args = ["build"]
+
+[tasks.assembleRelease]
+command = "cargo"
+args = ["build", "--release"]
+
+[tasks.assembleDocs]
+install_crate = "cargo-doc"
+command = "cargo"
+args = ["doc", "--all"]
+
+[tasks.assembleDocker]
+command = "echo"
+args = ["placeholderAssembleDocker"]
+
+[tasks.test]
+description = "Runs the cargo tarpaulin plugin."
+install_crate = "cargo-tarpaulin"
+command = "cargo"
+args = ["tarpaulin"]
+
+[tasks.build]
+dependencies = [
+    "format",
+    "assemble",
+    "assembleDocs",
+    "test",
+    "lint"
+]
+
+[tasks.ci]
+dependencies = [
+    "format",
+    "assemble",
+    "assembleDocs",
+    "lint"
+]
+
+[tasks.checkVersion]
+command = "echo"
+args = ["placeholderCheckVersion"]
+
+[tasks.publishDocker]
+dependencies = ["assembleRelease"]
+command = "echo"
+args = ["placeholderPublishDocker"]
+
+[tasks.publish]
+dependencies = [
+    "publishDocker",
+]
+
+[tasks.release]
+dependencies = [
+    "checkVersion",
+    "assembleDocs",
+    "publish",
+]

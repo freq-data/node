@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentialis: false
+        fetch-depth: 0
+
+    - uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: stable
+        override: true
+    - uses: Swatinem/rust-cache@v1
+    - uses: actions-rs/cargo@v1
+      with:
+        command: install
+        args: |
+          semantic-release-rust --version 1.0.0-alpha.8
+
+    - uses: actions-rs/cargo@v1
+      with:
+        command: install
+        args: cargo-make
+
+    - name: Semantic Release
+      uses: cycjimmy/semantic-release-action@v2
+      id: semantic
+      with:
+          semantic_version: 17.1.1
+          extra_plugins: |
+              @semantic-release/exec@5.0
+              @semantic-release/changelog@5.0.1
+              @semantic-release/git@9.0
+      env:
+        CARGO_REGISTRY_TOKEN: ${{secrets.CARGO_TOKEN}}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Deploy Docs
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./target/doc
+        force_orphan: true
