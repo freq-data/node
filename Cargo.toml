@@ -1,7 +1,7 @@
 [package]
 name = "node-watcher"
 authors = ["Alexander Poole <alexander@poole.solutions>"]
-version ="1.0.0"
+version ="1.0.1"
 edition = "2018"
 description = "A CLI for watching ETH nodes and pubsubing when events happen."
 readme = "README.md"
