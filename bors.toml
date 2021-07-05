@@ -1,2 +1,3 @@
 status = ["Done"]
 delete-merged-branches = true
+commit_title = "chore(merge): ${PR_REFS}"
