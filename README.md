@@ -1,4 +1,4 @@
-# node
+# Node-Watcher
 Node watcher, watches a ETH node and publishes the data.
 
 ## Development
