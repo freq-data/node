@@ -1,3 +1,2 @@
-status = ["ci (stable)", "ci (beta)"]
-pr-status = ["License Compliance", "WIP"]
+status = ["Done"]
 delete-merged-branches = true
