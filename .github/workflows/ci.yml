@@ -4,7 +4,7 @@ on:
       - staging
       - trying
 
-name: Continuous integration
+name: CI
 
 jobs:
   ci:
