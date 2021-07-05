@@ -1,4 +1,8 @@
-on: push
+on:
+  push:
+    branches:
+      - staging
+      - trying
 
 name: Continuous integration
 
@@ -27,12 +31,13 @@ jobs:
           command: install
           args: cargo-make
 
-      - uses: actions-rs/cargo@v1
+      - name: Build and Lint
+        uses: actions-rs/cargo@v1
         with:
           command: make
           args: ci
 
-      - name: Run cargo-tarpaulin
+      - name: Test
         uses: actions-rs/tarpaulin@v0.1
         with:
           version: '0.18.0'

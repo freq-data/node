@@ -74,14 +74,9 @@ dependencies = ["assembleRelease"]
 command = "echo"
 args = ["placeholderPublishDocker"]
 
-[tasks.publish]
-dependencies = [
-    "publishDocker",
-]
-
 [tasks.release]
 dependencies = [
     "checkVersion",
     "assembleDocs",
-    "publish",
+    "publishDocker",
 ]
