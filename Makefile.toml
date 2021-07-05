@@ -77,6 +77,5 @@ args = ["placeholderPublishDocker"]
 [tasks.release]
 dependencies = [
     "checkVersion",
-    "assembleDocs",
-    "publishDocker",
+    "publishDocker"
 ]
