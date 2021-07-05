@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/freq-data/node-watcher/compare/v1.0.1...v1.0.2) (2021-07-05)
+
+
+### Bug Fixes
+
+* **release:** prepare CI for borg-ng and fix release workflow ([94b364b](https://github.com/freq-data/node-watcher/commit/94b364be1f8913c88222aa236283e01b4f48f3b4))
+
 ## [1.0.1](https://github.com/freq-data/node-watcher/compare/v1.0.0...v1.0.1) (2021-07-05)
 
 
