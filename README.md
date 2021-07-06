@@ -1,4 +1,11 @@
 # Node-Watcher
+[![CI](https://github.com/freq-data/node-watcher/workflows/CI/badge.svg)](https://github.com/freq-data/node-watcher)
+[![CodeFactor](https://www.codefactor.io/repository/github/freq-data/node-watcher/badge)](https://www.codefactor.io/repository/github/freq-data/node-watcher)
+[![codecov](https://codecov.io/gh/freq-data/node-watcher/branch/main/graph/badge.svg?token=HHBhutxpnG)](https://codecov.io/gh/freq-data/node-watcher)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/freq-data/node-watcher/blob/main/LICENSE)
+[![Crates.io](https://img.shields.io/crates/v/node-watcher?color=%23FF4500)](https://crates.io/crates/node-watcher)
+[![Docs.rs](https://docs.rs/node-watcher/badge.svg)](https://docs.rs/crate/node-watcher)
+
 Node watcher, watches a ETH node and publishes the data.
 
 ## Development
