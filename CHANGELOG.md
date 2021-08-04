@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/freq-data/node-watcher/compare/v1.0.2...v2.0.0) (2021-08-04)
+
+
+### Features
+
+* **docker:** use testcontainers to start docker from tests ([d8dee6d](https://github.com/freq-data/node-watcher/commit/d8dee6d70601b2a53bc69f8756335e36325108e0))
+
+
+### BREAKING CHANGES
+
+* **docker:** convert from app to library
+
 ## [1.0.2](https://github.com/freq-data/node-watcher/compare/v1.0.1...v1.0.2) (2021-07-05)
 
 
